@@ -1,0 +1,34 @@
+
+;; Architecture extensions
+#include weak "..\ARM\ARMv7-M-ETM.ddf"
+#include weak "..\ARM\ARMv7-M-TPIU.ddf"
+#include weak "..\ARM\CoreSight-ETB.ddf"
+#include weak "..\ARM\CoreSight-TF.ddf"
+
+;; Memory information ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Used to define address zones within the ARM address space (Memory). 
+;;
+;;   Name      may be almost anything
+;;   AdrSpace  must be Memory
+;;   StartAdr  start of memory block
+;;   EndAdr    end of memory block
+;;   AccType   type of access, read-only (R), read-write (RW) or SFR (W)
+
+[Memory]
+;;         Name             AdrSpace    StartAdr    EndAdr      AccType   Width
+Memory =  Periph-Bitband   Memory      0x42000000  0x43FFFFFF  W  
+Memory =  FlashNVM         Memory      0x10000000  0x1003FFFF  R  
+Memory =  Flash            Memory      0x00000000  0x000FFFFF  R  
+Memory =  Periph           Memory      0x40000000  0x400FFFFF  W  
+Memory =  RAM-Bitband      Memory      0x22000000  0x23FFFFFF  W  
+Memory =  RAM              Memory      0x1FFF0000  0x2002FFFF  RW 
+Memory =  SystemSFR        Memory      0xE0000000  0xE00FFFFF  W  
+Memory =  ExtDev           Memory      0x60000000  0xDFFFFFFF  W  
+Memory =  FlexRAM          Memory      0x14000000  0x14000FFF  RW 
+
+TrustedRanges = true
+UseSfrFilter = true
+
+[SfrInclude]
+File = MK66F18.svd.xml
