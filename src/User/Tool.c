@@ -33,7 +33,7 @@ void EMS_Correct_KEY_Operation(KEY_value *key)
 void GO_KEY_Operation(KEY_value *key)
 {
     key->new = KEY_Read(KEY2);
-    if(key->new == 0 && key->old == 1)
+    if(key->new && (key->new ^ key->old))
     {
         goFlag = 1;
     }
