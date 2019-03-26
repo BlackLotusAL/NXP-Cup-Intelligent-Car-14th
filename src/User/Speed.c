@@ -105,7 +105,7 @@ void Speed_Test()
 
 void Speed_Stop()
 {
-    if(ADC_value[M0] < -100)
+    if(ADC_value[M0] < -200)
         
     {   
         goFlag = 0;

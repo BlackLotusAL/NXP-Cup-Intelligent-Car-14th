@@ -53,6 +53,7 @@ void SendStr()
                      servoDuty, (int)turnAngle,\
                      setLeftPulse, setRightPulse, getLeftPulse, getRightPulse,\
                      leftDuty, rightDuty);
+   
     UART_Put_Str(UART_4, (uint8 *)sendStr);             //发送字符串
 }
 

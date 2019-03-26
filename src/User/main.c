@@ -67,7 +67,7 @@ float posError = 0, posError_H = 0, posError_V = 0;
 int posStatus = 0;
 
 int servoDuty = SERVO_MIDDLE_DUTY, servoTurnDuty = 0;
-int setPulse = 0, turnPulse = 0, defaultPulse = 70;
+int setPulse = 0, turnPulse = 0, defaultPulse = 60;
 int getLeftPulse  = 0, setLeftPulse  = 0, leftDuty  = 0;
 int getRightPulse = 0, setRightPulse = 0, rightDuty = 0;
 float getSpeed = 0, turnAngle = 0, turnRadius = 0, turnSpeed = 0;

@@ -740,7 +740,7 @@
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>$PROJ_DIR$\src\Project_Setting\Linker_Files\LQK66RAM256K.icf</state>
+          <state>$PROJ_DIR$\src\Project_Setting\Linker_Files\LQK66FLASH1M.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
