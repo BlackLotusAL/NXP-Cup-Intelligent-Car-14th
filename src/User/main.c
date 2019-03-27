@@ -67,7 +67,7 @@ float posError = 0, posError_H = 0, posError_V = 0;
 int posStatus = 0;
 
 int servoDuty = SERVO_MIDDLE_DUTY, servoTurnDuty = 0;
-int setPulse = 0, turnPulse = 0, defaultPulse = 60;
+int setPulse = 0, turnPulse = 0, defaultPulse = 80;
 int getLeftPulse  = 0, setLeftPulse  = 0, leftDuty  = 0;
 int getRightPulse = 0, setRightPulse = 0, rightDuty = 0;
 float getSpeed = 0, turnAngle = 0, turnRadius = 0, turnSpeed = 0;
@@ -84,14 +84,15 @@ void main(void)
 {
     DisableInterrupts;                  //关闭中断
     Init_All();
-    PID_Init(&PID_left , 3.0, 180.0, 0.0, 0.01, -200, 400);
-    PID_Init(&PID_right, 3.0, 180.0, 0.0, 0.01, -200, 400);
-    PID_Init(&PID_servo, 0.5,   0.0, 0.2, 0.02, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);
+    PID_Init(&PID_left , 3.0, 210.0, 0.0,  0.01, -200, 400);
+    PID_Init(&PID_right, 3.0, 210.0, 0.0,  0.01, -200, 400);
+    PID_Init(&PID_servo, 0.5,   0.0, 0.2, 0.005, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);
     EnableInterrupts;                   //开启中断
     
     while(1)
     {       
         EMS_Correct_KEY_Operation(&K1);
         GO_KEY_Operation(&K2);
+        SendStr();
     }
 }

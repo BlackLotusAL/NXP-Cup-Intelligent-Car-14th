@@ -83,6 +83,4 @@ void PIT2_Interrupt()
 void PIT3_Interrupt()
 {
     PIT_Flag_Clear(PIT3);       //清中断标志位   
-    
-    SendStr();
 }

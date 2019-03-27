@@ -9,8 +9,8 @@
 
 #define SPEED_PIT_CYCLE         (10.0)          //速度控制的PIT周期，ms
 #define SPEED_CONTROL_CYCLE     (10 * 1000)     //速度控制周期
-#define SERVO_CONTROL_CYCLE     (20 * 1000)     //舵机控制周期
-#define EMS_COLLECT_CYCLE       (1 * 1000)      //电磁采集周期
+#define SERVO_CONTROL_CYCLE     ( 5 * 1000)     //舵机控制周期
+#define EMS_COLLECT_CYCLE       ( 1 * 1000)     //电磁采集周期
 #define UART_SEND_CYCLE         (100 * 1000)    //蓝牙发数周期
 
 #define FORWARD (1)                     //前进

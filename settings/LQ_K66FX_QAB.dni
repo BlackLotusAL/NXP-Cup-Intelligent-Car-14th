@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=1245111001
+Checksum=-1217043709
 [Stack]
 FillEnabled=0
 OverflowWarningsEnabled=1
@@ -92,10 +92,6 @@ ShowTimeLog=1
 SumEnabled=0
 ShowTimeSum=1
 SumSortOrder=0
-[Disassemble mode]
-mode=0
-[Breakpoints2]
-Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -103,17 +99,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Aliases]
-A0=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Project_Setting\Startup\start.c" ""
-A1=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\FTM.c" ""
-A2=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\LPTMR.c" ""
-A3=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c" "C:\Users\Administrator\Desktop\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c"
-A4=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\common.c" ""
-A5=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\vectors.c" ""
-A6=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\wdog.c" ""
-A7=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\User\main.c" ""
-Count=8
-SuppressDialog=0
 [DriverProfiling]
 Enabled=0
 Mode=1
@@ -128,3 +113,18 @@ ShowTiming=1
 Frequency=10000
 Probe0=I0
 ProbeSetup0=2 1 1 2 0 0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+A0=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Project_Setting\Startup\start.c" ""
+A1=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\FTM.c" ""
+A2=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\LPTMR.c" ""
+A3=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c" "C:\Users\Administrator\Desktop\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c"
+A4=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\common.c" ""
+A5=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\vectors.c" ""
+A6=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\wdog.c" ""
+A7=_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\User\main.c" ""
+Count=8
+SuppressDialog=0
