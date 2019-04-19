@@ -22,39 +22,39 @@
 #define EMS_CORRECT_MODE_V      (2)     //开启电磁信号两侧校准模式
 #define EMS_CORRECT_MODE_OFF    (3)     //关闭电磁信号校准模式
 
-#define CLB (-2)                        //车身非常靠左
-#define CLS (-1)                        //车身偏左
-#define CMZ (0)                         //车身正中
-#define CRS (1)                         //车身偏右
-#define CRB (2)                         //车身非常靠右
+#define CAR_VERY_LEFT  (-2)             //车身非常靠左
+#define CAR_LEFT       (-1)             //车身偏左
+#define CAR_MIDDLE     (0)              //车身正中
+#define CAR_RIGHT      (1)              //车身偏右
+#define CAR_VERY_RIGHT (2)              //车身非常靠右
 
-#define TLB (-2)                        //向左急弯
-#define TLS (-1)                        //向左小弯
-#define TMZ (0)                         //直道
-#define TRS (1)                         //向右小弯
-#define TRB (2)                         //向右急弯
+#define TURN_VERY_LEFT  (-2)            //向左急弯
+#define TURN_LEFT       (-1)            //向左小弯
+#define TURN_ZERO       (0)             //直道
+#define TURN_RIGHT      (1)             //向右小弯
+#define TURN_VERY_RIGHT (2)             //向右急弯
 
-#define CAR_LENGTH (200.0)                                                              //车身长，mm
-#define CAR_WIDTH (155.0)                                                               //车身宽，mm
-#define ENCODER_WHEEL_DIAMETER (18.1)                                                   //编码器轮直径，mm
+#define CAR_LENGTH (200.0)                                                              //车身长，单位mm
+#define CAR_WIDTH (155.0)                                                               //车身宽，单位mm
+#define ENCODER_WHEEL_DIAMETER (18.1)                                                   //编码器轮直径，单位mm
 #define LINE_NUMBER (512.0)                                                             //512线编码器
-#define LENGTH_PER_PULSE (PI * ENCODER_WHEEL_DIAMETER / LINE_NUMBER)                    //每个脉冲对应的长度，mm
-#define A2R(x) (PI * (x) / 180.0)                                                       //角度转换弧度
-#define R2A(x) (180.0 * (x) / PI)                                                       //弧度转换角度
+#define LENGTH_PER_PULSE (PI * ENCODER_WHEEL_DIAMETER / LINE_NUMBER)                    //每个脉冲对应的长度，单位mm
+#define A2R(x) (PI * (x) / 180.0)                                                       //角度转弧度
+#define R2A(x) (180.0 * (x) / PI)                                                       //弧度转角度
 #define SPEED_PIT_CYCLE_PER_SECOND (1000.0 / SPEED_PIT_CYCLE)                           //每秒进行速度控制的次数
-#define ENCODER_2_TRUE(x) ((x) * (SPEED_PIT_CYCLE_PER_SECOND * LENGTH_PER_PULSE))       //编码器读数转换真实速度，mm/s,setPulse=1，1.1cm/s
+#define ENCODER_2_TRUE(x) ((x) * (SPEED_PIT_CYCLE_PER_SECOND * LENGTH_PER_PULSE))       //编码器读数转换真实速度，单位mm/s，即setPulse=1的速度是1.1cm/s
 #define TRUE_2_ENCODER(x) ((x) / (SPEED_PIT_CYCLE_PER_SECOND * LENGTH_PER_PULSE))       //真实速度转换编码器读数
-#define ADC_2_DISTANCE(x) (-0.00007 * pow((x), 3) + 0.0126 * pow((x), 2) - 1.0024 * pow((x), 1) + 41.316 * pow((x), 0)) //ADC读数转换成真实与中线距离，mm
+#define ADC_2_DISTANCE(x) (-0.00007 * pow((x), 3) + 0.0126 * pow((x), 2) - 1.0024 * pow((x), 1) + 41.316 * pow((x), 0)) //ADC读数转换成真实与中线距离，单位mm
 
 #define SERVO_MIDDLE_DUTY (7050)        //舵机正中占空比
 #define SERVO_MAX_TURN_DUTY (700)       //舵机最大转向占空比
 #define SERVO_TURN_MOST_RIGHT (7750)    //舵机向最右转
 #define SERVO_TURN_MOST_LEFT (6350)     //舵机向最左转
 
-#define L2 (0)
-#define L1 (1)
-#define M0 (2)
-#define R1 (3)
-#define R2 (4)
+#define L2 (0)          //最左边电感编号0
+#define L1 (1)          //最左边电感编号1
+#define M0 (2)          //最左边电感编号2
+#define R1 (3)          //最左边电感编号3
+#define R2 (4)          //最左边电感编号4
 
 #endif

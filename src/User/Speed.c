@@ -12,6 +12,14 @@ extern int posStatus;
 extern int goFlag;
 extern KEY_value K1;
 
+/**
+* @函数名: Speed_Get
+* @功  能: 编码器读取电机速度
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void Speed_Get()        //获取正交解码速度
 {
     getLeftPulse  = FTM_AB_Get(FTM1);
@@ -21,14 +29,24 @@ void Speed_Get()        //获取正交解码速度
     getRightPulse = Constrain_int_output(getRightPulse, 0, -50000, 50000);
 }
 
+/**
+* @函数名: Speed_Set
+* @功  能: 电机速度设置
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void Speed_Set()
 {
+    //设置PID给定回馈
     PID_left.set = (float)setLeftPulse;
     PID_left.fdb = (float)getLeftPulse;
     PID_left.output_1 = (float)leftDuty;
     IncPID_Operation(&PID_left);        
     leftDuty = (int)PID_left.output;      
-            
+        
+    //允许正反转
     if(leftDuty > 0)
     {
         FTM_PWM_Duty(FTM0, FTM_CH0, 0);
@@ -40,13 +58,14 @@ void Speed_Set()
         FTM_PWM_Duty(FTM0, FTM_CH1, 0);
     }        
 
-   
+    //设置PID给定回馈   
     PID_right.set = (float)setRightPulse;     
     PID_right.fdb = (float)getRightPulse;
     PID_right.output_1 = (float)rightDuty;
     IncPID_Operation(&PID_right);
     rightDuty = (int)PID_right.output;
-            
+    
+    //允许正反转            
     if(rightDuty > 0)
     {
         FTM_PWM_Duty(FTM0, FTM_CH2, rightDuty);
@@ -59,16 +78,25 @@ void Speed_Set()
     }        
 }
 
+/**
+* @函数名: Speed_Turn
+* @功  能: 电机转向速度差设置
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void Speed_Turn()
 {
-    getSpeed = ENCODER_2_TRUE(getLeftPulse + getRightPulse) / 2.0;
+    getSpeed = ENCODER_2_TRUE(getLeftPulse + getRightPulse) / 2.0;              //获取车当前速度
     
-    turnAngle = 0.0542 * fabs((float)servoTurnDuty) + 0.1667;                   //根据舵机转向占空比计算转向角度
+    turnAngle = 0.0542 * fabs((float)servoTurnDuty) + 0.1667;                  //根据舵机转向占空比计算转向角度
     turnRadius = (CAR_LENGTH / sin(A2R(turnAngle))) - (CAR_WIDTH / 2.0);        //根据转向角度计算转弯半径
     turnSpeed = (getSpeed * CAR_WIDTH) / (2.0 * turnRadius);                    //根据当前速度计算转弯差速
-    turnSpeed = turnSpeed * 0.8;
+    turnSpeed = turnSpeed * 0.8;                                                //转向速度系数
     turnPulse = (int)TRUE_2_ENCODER(turnSpeed);                                 //根据转弯差速计算转弯差脉冲
     
+    //电机差速配合舵机方向
     if(servoTurnDuty > 0)
     {
         turnPulse = -turnPulse;
@@ -78,9 +106,17 @@ void Speed_Turn()
 
 }
 
+/**
+* @函数名: Speed_Test
+* @功  能: 电机速度按键测试
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void Speed_Test()
 {
-    if(!KEY_Read(KEY1))           //如果KEY1按下
+    if(!KEY_Read(KEY1))           //如果KEY1按下，加速
     {
         if(leftDuty < 400 && rightDuty < 400 )
         {
@@ -88,7 +124,7 @@ void Speed_Test()
             rightDuty += 10;                               
         }
     }
-    else if(!KEY_Read(KEY2))     //如果KEY2按下
+    else if(!KEY_Read(KEY2))     //如果KEY2按下，减速
     {
         if(leftDuty > 0 && rightDuty > 0)
         {
@@ -96,13 +132,21 @@ void Speed_Test()
             rightDuty -= 10;
         }
     }
-    else if(!KEY_Read(KEY0))     //如果KEY0按下
+    else if(!KEY_Read(KEY0))     //如果KEY0按下，默认速度
     {
         leftDuty = 250;
         rightDuty = 250;                       
     }  
 }
 
+/**
+* @函数名: Speed_Stop
+* @功  能: 安全模式自动停车
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void Speed_Stop()
 {
     if(ADC_value[M0] < -150)
