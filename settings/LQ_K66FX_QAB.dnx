@@ -15,10 +15,11 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <JLinkDriver>
-        <CStepIntDis>_ 0</CStepIntDis>
         <TraceBufferSize>0x00010000</TraceBufferSize>
         <TraceStallIfFIFOFull>0x00000000</TraceStallIfFIFOFull>
         <TracePortSize>0x00000004</TracePortSize>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </JLinkDriver>
     <SWOTraceHWSettings>
         <OverrideDefaultClocks>0</OverrideDefaultClocks>
@@ -139,6 +140,9 @@
     <Disassemble_mode>
         <mode>0</mode>
     </Disassemble_mode>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
     <Breakpoints2>
         <Count>0</Count>
     </Breakpoints2>

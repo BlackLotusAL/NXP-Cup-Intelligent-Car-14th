@@ -19,13 +19,22 @@ extern int strI;
 extern KEY_value K1, K2;
 extern int goFlag;
 
-
+/**
+* @函数名: SendWare
+* @功  能: 山外虚拟示波器
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void SendWare()
 {
     uint8 cmd[2] = {0x03, 0xFC};
+    //帧头
     UART_Put_Char(UART_4, cmd[0]);
     UART_Put_Char(UART_4, cmd[1]);
     
+    //要发送的数
     sendArr[0] = (uint8)ADC_value[L2];
     sendArr[1] = (uint8)ADC_value[L1];
     sendArr[2] = (uint8)ADC_value[M0];
@@ -33,10 +42,20 @@ void SendWare()
     sendArr[4] = (uint8)ADC_value[R2];
     SendArr(sendArr, 5); 
     
+    //帧尾
     UART_Put_Char(UART_4, cmd[1]);
     UART_Put_Char(UART_4, cmd[0]);  
 }
 
+/**
+* @函数名: SendArr
+* @功  能: 发送数组 在山外虚拟示波器上显示
+* @参  数: int Arr[]  发送的数组名
+* @参  数: int Size   发送的数组长度
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void SendArr(int Arr[], int Size)
 {
     for(uint32 i = 0; i < Size; i++)
@@ -45,18 +64,35 @@ void SendArr(int Arr[], int Size)
     }
 }
 
+/**
+* @函数名: SendStr
+* @功  能: 蓝牙发送数据到上位机
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void SendStr()
 {
+    //生产要发送的字符串
     sprintf(sendStr,"M0:%04d  PosSta:%02d  PosErr_H:%04d  PosErr_V:%04d  PosErr:%04d  SerDuty:%04d  TuAng:%03d  SetLPu:%03d  SetRPu:%03d  GetLPu:%03d  GetRPu:%03d LDuty:%04d RDuty:%04d\r\n",\
                      (int)ADC_value[M0],\
                      (int)posStatus, (int)posError_H, (int)posError_V, (int)posError,\
                      servoDuty, (int)turnAngle,\
                      setLeftPulse, setRightPulse, getLeftPulse, getRightPulse,\
                      leftDuty, rightDuty);
-   
-    UART_Put_Str(UART_4, (uint8 *)sendStr);             //发送字符串
+    //蓝牙发送字符串
+    UART_Put_Str(UART_4, (uint8 *)sendStr);
 }
 
+/**
+* @函数名: ReceiveStr_Init
+* @功  能: 接收字符串数组初始化
+* @参  数: 无
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void ReceiveStr_Init()
 {
     for(int i = 0; i < 20; i++)
@@ -66,16 +102,32 @@ void ReceiveStr_Init()
     strI = 0;
 }
 
+/**
+* @函数名: ReceiveStr
+* @功  能: 接收字符串
+* @参  数: s8 data    中断收到的8位数据
+* @返  回: 无
+* @简  例: 无
+* @注  意：无
+*/
 void ReceiveStr(s8 data)
 {
+    //读入数据
     receiveStr[strI] = data;
+    
+    //字符串当前位置移至下一位
     strI++;
+    
+    //如果接收数组已满则初始化数组
     if(strI >= 20)
     {
         ReceiveStr_Init();
     }
+    
+    //如果接受数据的前两位为\r\n（字符串结尾）
     if(receiveStr[strI - 2] == '\r' && receiveStr[strI - 1] == '\n')
     {
+        //接收到的字符串与命令字符头比较，再读入相应的数字
         if(strI > 3 && strncmp(receiveStr, "SVD", 2) == 0)
         {
             servoDuty = (int)(receiveStr[3] - 0x30) * 1000 + (int)(receiveStr[4] - 0x30) * 100 + (int)(receiveStr[5] - 0x30) * 10 + (int)(receiveStr[6] - 0x30) * 1;
@@ -92,7 +144,8 @@ void ReceiveStr(s8 data)
         {
             PID_servo.KD  = (float)(receiveStr[4] - 0x30) * 10.0  + (float)(receiveStr[5] - 0x30) * 1.0  + (float)(receiveStr[6] - 0x30) * 0.1;
         }
-
+        
+        //数组初始化
         ReceiveStr_Init();
     }
 }
