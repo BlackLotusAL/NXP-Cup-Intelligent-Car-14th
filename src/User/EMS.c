@@ -16,11 +16,11 @@ extern KEY_value K1;
 void EMS_Get()
 {
     //电磁信号采集
-    ADC_value[L2] = (float)ADC_Ave(ADC_1, ADC1_SE11, ADC_12bit, 10);    
-    ADC_value[M0] = (float)ADC_Ave(ADC_1, ADC1_SE12, ADC_12bit, 10);  
+    ADC_value[L2] = (float)ADC_Ave(ADC_1, ADC1_SE10, ADC_12bit, 10); 
+    ADC_value[L1] = (float)ADC_Ave(ADC_1, ADC1_SE11, ADC_12bit, 10);  
+    ADC_value[M0] = (float)ADC_Ave(ADC_1, ADC1_SE12, ADC_12bit, 10);
+    ADC_value[R1] = (float)ADC_Ave(ADC_1, ADC1_SE13, ADC_12bit, 10);
     ADC_value[R2] = (float)ADC_Ave(ADC_1, ADC1_SE14, ADC_12bit, 10);   
-    //ADC_value[L1] = (float)ADC_Ave(ADC_1, ADC1_SE13, ADC_12bit, 10);  
-    //ADC_value[R1] = (float)ADC_Ave(ADC_1, ADC1_SE10, ADC_12bit, 10);
     
 
     if(K1.flag == EMS_CORRECT_MODE_OFF)    //如果电磁校准模式关闭

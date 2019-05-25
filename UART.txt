@@ -32,7 +32,7 @@
 
 完整数据：
     sprintf(sendStr,"<PosSta:%02d PosErr:%04d SerTurn:%03d SerDuty:%04d> <GetLPu:%03d GetRPu:%03d GetSp:%03d> <TuAng:%03d TuRad:%05d TuSp:%03d TuPu:%03d SetLPu:%03d SetRPu:%03d>\r\n",\
-                     (int)posStatus, (int)posError, servoTurnDuty, servoDuty \
+                     (int)posStatus, (int)posError, servoTurnDuty, servoDuty, \
                      getLeftPulse, getRightPulse, (int)getSpeed, \
                      (int)turnAngle, (int)turnRadius, (int)turnSpeed, \
                      turnPulse, setLeftPulse, setRightPulse);

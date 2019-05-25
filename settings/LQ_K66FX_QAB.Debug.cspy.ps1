@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.general.xcl" --backend -f "D:\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.driver.xcl" 
+& "E:\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.general.xcl" --backend -f "C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.driver.xcl" 
+& "E:\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\settings\LQ_K66FX_QAB.Debug.driver.xcl" 
 }

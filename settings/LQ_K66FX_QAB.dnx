@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>-1217043709</Checksum>
+        <Checksum>4097119094</Checksum>
     </DebugChecksum>
     <Stack>
         <FillEnabled>0</FillEnabled>
@@ -23,11 +23,11 @@
     </JLinkDriver>
     <SWOTraceHWSettings>
         <OverrideDefaultClocks>0</OverrideDefaultClocks>
-        <CpuClock>72000000</CpuClock>
+        <CpuClock>180000000</CpuClock>
         <ClockAutoDetect>0</ClockAutoDetect>
         <ClockWanted>2000000</ClockWanted>
         <JtagSpeed>2000000</JtagSpeed>
-        <Prescaler>36</Prescaler>
+        <Prescaler>90</Prescaler>
         <TimeStampPrescIndex>0</TimeStampPrescIndex>
         <TimeStampPrescData>0</TimeStampPrescData>
         <PcSampCYCTAP>1</PcSampCYCTAP>
@@ -50,8 +50,17 @@
         <ShowArgs>0</ShowArgs>
     </CallStack>
     <Disassembly>
+        <InstrCount>0</InstrCount>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <Disassemble_mode>
+        <mode>0</mode>
+    </Disassemble_mode>
     <Trace1>
         <Enabled>0</Enabled>
         <ShowSource>1</ShowSource>
@@ -86,6 +95,14 @@
         <SumEnabled>0</SumEnabled>
         <ShowTimeSum>1</ShowTimeSum>
     </DataLog>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
     <EventLog>
         <Title_0>Ch3</Title_0>
         <Symbol_0>0 4 1</Symbol_0>
@@ -102,23 +119,33 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
-    <InterruptLog>
-        <LogEnabled>0</LogEnabled>
-        <GraphEnabled>0</GraphEnabled>
-        <ShowTimeLog>1</ShowTimeLog>
-        <SumEnabled>0</SumEnabled>
-        <ShowTimeSum>1</ShowTimeSum>
-        <SumSortOrder>0</SumSortOrder>
-    </InterruptLog>
-    <Log_file>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-        <Category>_ 0</Category>
-    </Log_file>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <Aliases>
+        <A0>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Project_Setting\Startup\start.c" ""</A0>
+        <A1>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\FTM.c" ""</A1>
+        <A2>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\LPTMR.c" ""</A2>
+        <A3>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c" "C:\Users\Administrator\Desktop\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c"</A3>
+        <A4>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\common.c" ""</A4>
+        <A5>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\vectors.c" ""</A5>
+        <A6>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\wdog.c" ""</A6>
+        <A7>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\User\main.c" ""</A7>
+        <Count>8</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>1</Mode>
@@ -137,25 +164,4 @@
         <Probe0>I0</Probe0>
         <ProbeSetup0>2 1 1 2 0 0</ProbeSetup0>
     </PowerProbe>
-    <Disassemble_mode>
-        <mode>0</mode>
-    </Disassemble_mode>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Count>0</Count>
-    </Breakpoints2>
-    <Aliases>
-        <A0>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Project_Setting\Startup\start.c" ""</A0>
-        <A1>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\FTM.c" ""</A1>
-        <A2>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\LPTMR.c" ""</A2>
-        <A3>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c" "C:\Users\Administrator\Desktop\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\PLL.c"</A3>
-        <A4>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\common.c" ""</A4>
-        <A5>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\vectors.c" ""</A5>
-        <A6>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\Source\wdog.c" ""</A6>
-        <A7>_ "C:\Users\Administrator\Desktop\龙邱k66子母板和运放资料20181123\LQ_MK66_VG白色母版\LQ_MK66 VG主板资料\3 LQ_K66_VG母板例程（库）\LQ_K66FX_FTM_QAB_OLED_UART4-PIT0\src\User\main.c" ""</A7>
-        <Count>8</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
 </settings>

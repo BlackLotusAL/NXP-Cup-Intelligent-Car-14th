@@ -75,12 +75,11 @@ void SendArr(int Arr[], int Size)
 void SendStr()
 {
     //生产要发送的字符串
-    sprintf(sendStr,"M0:%04d  PosSta:%02d  PosErr_H:%04d  PosErr_V:%04d  PosErr:%04d  SerDuty:%04d  TuAng:%03d  SetLPu:%03d  SetRPu:%03d  GetLPu:%03d  GetRPu:%03d LDuty:%04d RDuty:%04d\r\n",\
-                     (int)ADC_value[M0],\
-                     (int)posStatus, (int)posError_H, (int)posError_V, (int)posError,\
-                     servoDuty, (int)turnAngle,\
-                     setLeftPulse, setRightPulse, getLeftPulse, getRightPulse,\
-                     leftDuty, rightDuty);
+    sprintf(sendStr,"<PosSta:%02d PosErr:%04d SerTurn:%03d SerDuty:%04d> <GetLPu:%03d GetRPu:%03d GetSp:%03d> <TuAng:%03d TuRad:%05d TuSp:%03d TuPu:%03d SetLPu:%03d SetRPu:%03d>\r\n",\
+                     (int)posStatus, (int)posError, servoTurnDuty, servoDuty, \
+                     getLeftPulse, getRightPulse, (int)getSpeed, \
+                     (int)turnAngle, (int)turnRadius, (int)turnSpeed, \
+                     turnPulse, setLeftPulse, setRightPulse);
     //蓝牙发送字符串
     UART_Put_Str(UART_4, (uint8 *)sendStr);
 }

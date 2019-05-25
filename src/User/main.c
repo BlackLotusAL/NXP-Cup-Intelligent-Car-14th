@@ -95,6 +95,6 @@ void main(void)
     {       
         EMS_Correct_KEY_Operation(&K1); //电磁校准按键功能
         GO_KEY_Operation(&K2);          //发车按键功能
-        SendStr();                      //发送字符串
+
     }
 }

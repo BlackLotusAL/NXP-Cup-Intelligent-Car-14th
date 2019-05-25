@@ -1,14 +1,16 @@
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armproc.dll" 
+"E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armproc.dll" 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armjlink2.dll" 
+"E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armjlink2.dll" 
 
-"D:\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\Debug\Exe\c.out" 
+"C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\Debug\Exe\c.out" 
 
---plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armbat.dll" 
+--plugin="E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armbat.dll" 
 
---device_macro="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\Kxx.dmac" 
+--rtc_enable 
 
---device_macro="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\K6x_Trace.dmac" 
+--device_macro="E:\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro="E:\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\K6x_Trace.dmac" 
 
 
 

@@ -1,4 +1,4 @@
-"C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\src\Source\I2C.c"
+"C:\Users\BlackLotus_AL\Documents\GitHub\NXP-Cup-Intelligent-Car-14th\src\Source\UART.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
