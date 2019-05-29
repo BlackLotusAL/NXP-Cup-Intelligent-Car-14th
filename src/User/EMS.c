@@ -29,15 +29,15 @@ void EMS_Get()
         ADC_value[L2] = 1000.0 * (ADC_value[L2] - ADC_min[L2]) / (ADC_max[L2] - ADC_min[L2]);
         ADC_value[M0] = 1000.0 * (ADC_value[M0] - ADC_min[M0]) / (ADC_max[M0] - ADC_min[M0]);
         ADC_value[R2] = 1000.0 * (ADC_value[R2] - ADC_min[R2]) / (ADC_max[R2] - ADC_min[R2]);
-        //ADC_value[L1] = 1000.0 * (ADC_value[L1] - ADC_min[L1]) / (ADC_max[L1] - ADC_min[L1]);
-        //ADC_value[R1] = 1000.0 * (ADC_value[R1] - ADC_min[R1]) / (ADC_max[R1] - ADC_min[R1]);
+        ADC_value[L1] = 1000.0 * (ADC_value[L1] - ADC_min[L1]) / (ADC_max[L1] - ADC_min[L1]);
+        ADC_value[R1] = 1000.0 * (ADC_value[R1] - ADC_min[R1]) / (ADC_max[R1] - ADC_min[R1]);
         
         //限幅
         Constrain_float(ADC_value[L2], 1.0, 1000.0);
         Constrain_float(ADC_value[M0], 1.0, 1000.0);
         Constrain_float(ADC_value[L2], 1.0, 1000.0);
-        //Constrain_float(ADC_value[L1], 1.0, 1000.0); 
-        //Constrain_float(ADC_value[R1], 1.0, 1000.0);        
+        Constrain_float(ADC_value[L1], 1.0, 1000.0); 
+        Constrain_float(ADC_value[R1], 1.0, 1000.0);        
     }
 }
 
@@ -71,7 +71,7 @@ void EMS_Correct()
             if(ADC_value[R2] < ADC_min[R2])     ADC_min[R2] = ADC_value[R2];
             break;   
             
-        /*
+        
         case (EMS_CORRECT_MODE_V):
             if(ADC_value[L1] > ADC_max[L1])     ADC_max[L1] = ADC_value[L1];
             if(ADC_value[L1] < ADC_min[L1])     ADC_min[L1] = ADC_value[L1];
@@ -79,7 +79,7 @@ void EMS_Correct()
             if(ADC_value[R1] > ADC_max[R1])     ADC_max[R1] = ADC_value[R1];
             if(ADC_value[R1] < ADC_min[R1])     ADC_min[R1] = ADC_value[R1];
             break;
-        */
+        
     }
 }  
 
@@ -120,12 +120,12 @@ void Pos_Get()
     
     //差比和得出水平电感位置偏差
     posError_H = ((ADC_value[M0] - ADC_value[L2]) /(ADC_value[M0] + ADC_value[L2])) - ((ADC_value[M0] - ADC_value[R2]) / (ADC_value[M0] + ADC_value[R2]));  
-    posError_H = posError_H * 100.0;
+    posError_H = posError_H * 100.0f;
     
     //差比和得出垂直电感位置偏差
-    //posError_V = ((ADC_value[M0] - ADC_value[L1]) /(ADC_value[M0] + ADC_value[L1])) - ((ADC_value[M0] - ADC_value[R1]) / (ADC_value[M0] + ADC_value[R1]));     
-    //posError_V = posError_V * 100.0;
+    posError_V = ((ADC_value[M0] - ADC_value[L1]) /(ADC_value[M0] + ADC_value[L1])) - ((ADC_value[M0] - ADC_value[R1]) / (ADC_value[M0] + ADC_value[R1]));     
+    posError_V = posError_V * 100.0f;
     
     //最终位置偏差
-    posError = posError_H;
+    posError = posError_H + 0.5 * posError_V;
 }

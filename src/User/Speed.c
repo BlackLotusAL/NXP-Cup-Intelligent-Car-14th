@@ -93,7 +93,7 @@ void Speed_Turn()
     turnAngle = 0.0542 * fabs((float)servoTurnDuty) + 0.1667;                  //根据舵机转向占空比计算转向角度
     turnRadius = (CAR_LENGTH / sin(A2R(turnAngle))) - (CAR_WIDTH / 2.0);        //根据转向角度计算转弯半径
     turnSpeed = (getSpeed * CAR_WIDTH) / (2.0 * turnRadius);                    //根据当前速度计算转弯差速
-    turnSpeed = turnSpeed * 0.8;                                                //转向速度系数
+    //turnSpeed = turnSpeed * 0.8;                                                //转向速度系数
     turnPulse = (int)TRUE_2_ENCODER(turnSpeed);                                 //根据转弯差速计算转弯差脉冲
     
     //电机差速配合舵机方向
@@ -149,7 +149,7 @@ void Speed_Test()
 */
 void Speed_Stop()
 {
-    if(ADC_value[M0] < -150)
+    if(ADC_value[M0] < 50)
         
     {   
         goFlag = 0;

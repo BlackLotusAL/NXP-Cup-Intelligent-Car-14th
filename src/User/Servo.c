@@ -19,7 +19,7 @@ void Servo_Set()
 { 
     //PID运算
     PID_servo.set = 0.0;
-    PID_servo.fdb = 0.0001 * pow(posError, 3) + 0.2632 * posError;
+    PID_servo.fdb = 0.0001 * pow(posError, 3) + 0.25 * posError;	
     PosPID_Operation(&PID_servo);
     //设置舵机占空比
     servoTurnDuty = (int)PID_servo.output;

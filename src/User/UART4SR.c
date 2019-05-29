@@ -75,8 +75,9 @@ void SendArr(int Arr[], int Size)
 void SendStr()
 {
     //生产要发送的字符串
-    sprintf(sendStr,"<PosSta:%02d PosErr:%04d SerTurn:%03d SerDuty:%04d> <GetLPu:%03d GetRPu:%03d GetSp:%03d> <TuAng:%03d TuRad:%05d TuSp:%03d TuPu:%03d SetLPu:%03d SetRPu:%03d>\r\n",\
-                     (int)posStatus, (int)posError, servoTurnDuty, servoDuty, \
+    sprintf(sendStr,"L2:%04d  L1:%04d  M0:%04d  R1:%04d  R2:%04d  PosSta:%02d  PosErrH:%04d  PosErrV:%04d  SerTurn:%03d  SerDuty:%04d  GetLPu:%03d  GetRPu:%03d  GetSp:%03d  TuAng:%03d  TuRad:%05d  TuSp:%03d  TuPu:%03d  SetLPu:%03d  SetRPu:%03d\r\n",\
+                     (int)ADC_value[L2], (int)ADC_value[L1], (int)ADC_value[M0], (int)ADC_value[R1], (int)ADC_value[R2],\
+	  				 (int)posStatus, (int)posError_H, (int)posError_V, servoTurnDuty, servoDuty, \
                      getLeftPulse, getRightPulse, (int)getSpeed, \
                      (int)turnAngle, (int)turnRadius, (int)turnSpeed, \
                      turnPulse, setLeftPulse, setRightPulse);

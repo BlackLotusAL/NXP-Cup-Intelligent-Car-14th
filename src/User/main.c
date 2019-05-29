@@ -68,7 +68,7 @@ float posError = 0, posError_H = 0, posError_V = 0;     //位置偏差，水平电感位置
 int posStatus = 0;                                      //位置状态
 
 int servoDuty = SERVO_MIDDLE_DUTY, servoTurnDuty = 0;   //舵机占空比，舵机转向占空比
-int setPulse = 0, turnPulse = 0, defaultPulse = 80;     //速度设定值（编码器读到的目标脉冲数），转向脉冲设定值，默认速度脉冲
+int setPulse = 0, turnPulse = 0, defaultPulse = 60;     //速度设定值（编码器读到的目标脉冲数），转向脉冲设定值，默认速度脉冲
 int getLeftPulse  = 0, setLeftPulse  = 0, leftDuty  = 0;//读取左电机脉冲，设置左电机脉冲，设置左电机占空比          
 int getRightPulse = 0, setRightPulse = 0, rightDuty = 0;//读取右电机脉冲，设置右电机脉冲，设置右电机占空比          
 
@@ -88,13 +88,13 @@ void main(void)
     Init_All();                         //初始化函数
     PID_Init(&PID_left , 3.0, 210.0, 0.0,  0.01, -200, 400);                                //初始化PID参数
     PID_Init(&PID_right, 3.0, 210.0, 0.0,  0.01, -200, 400);                                //初始化PID参数
-    PID_Init(&PID_servo, 0.5,   0.0, 0.2, 0.005, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);//初始化PID参数
+    PID_Init(&PID_servo, 2.0,   0.0, 5.0,     1, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);//初始化PID参数
     EnableInterrupts;                   //开启中断
     
     while(1)
     {       
         EMS_Correct_KEY_Operation(&K1); //电磁校准按键功能
         GO_KEY_Operation(&K2);          //发车按键功能
-
+		//SendStr();                  	//发送字符串
     }
 }

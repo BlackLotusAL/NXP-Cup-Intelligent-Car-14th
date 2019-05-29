@@ -20,7 +20,7 @@ void Init_All()
     PIT_Init(PIT0, SPEED_CONTROL_CYCLE);        //速度控制周期
     PIT_Init(PIT1, SERVO_CONTROL_CYCLE);        //舵机控制周期
     PIT_Init(PIT2, EMS_COLLECT_CYCLE);          //电磁采集周期    
-    PIT_Init(PIT3, UART_SEND_CYCLE);            //蓝牙发数周期
+    //PIT_Init(PIT3, UART_SEND_CYCLE);            //蓝牙发数周期
     
     LED_Init();                                 //LED初始化 
     KEY_Init();                                 //按键初始化
