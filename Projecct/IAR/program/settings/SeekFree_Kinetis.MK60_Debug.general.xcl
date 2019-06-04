@@ -1,0 +1,15 @@
+"D:\professional software\IAR7.7\arm\bin\armproc.dll" 
+
+"D:\professional software\IAR7.7\arm\bin\armjlink2.dll" 
+
+"E:\work\seekfree\freescale_work\单片机库开发\K60库编写\逐飞科技_K60库\K60FX\Projecct\IAR\program\MK60_Debug\Exe\SeekFree_Kinetis.out" 
+
+--plugin "D:\professional software\IAR7.7\arm\bin\armbat.dll" 
+
+--device_macro "D:\professional software\IAR7.7\arm\config\debugger\NXP\Kxx.dmac" 
+
+--flash_loader "D:\professional software\IAR7.7\arm\config\flashloader\NXP\FlashK60Fxxx128K.board" 
+
+
+
+

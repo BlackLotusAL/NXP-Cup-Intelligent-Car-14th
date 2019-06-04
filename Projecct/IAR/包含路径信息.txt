@@ -1,0 +1,9 @@
+$PROJ_DIR$\..\..\USER\inc
+$PROJ_DIR$\..\..\USER\src
+$PROJ_DIR$\..\..\..\Libraries\startup\CoreSupport
+$PROJ_DIR$\..\..\..\Libraries\startup\DeviceSupport\IAR-ARM
+$PROJ_DIR$\..\..\..\Libraries\startup\DeviceSupport
+$PROJ_DIR$\..\..\..\Libraries\drives\inc
+$PROJ_DIR$\..\..\..\Libraries\seekfree
+$PROJ_DIR$\..\..\..\Libraries\FatFs
+$PROJ_DIR$\..\..\..\Libraries\FatFs\option

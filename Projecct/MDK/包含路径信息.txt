@@ -1,0 +1,9 @@
+..\USER\inc
+..\USER\src
+..\..\Libraries\startup\CoreSupport
+..\..\Libraries\startup\DeviceSupport\IAR-ARM
+..\..\Libraries\startup\DeviceSupport
+..\..\Libraries\drives\inc
+..\..\Libraries\seekfree
+..\..\Libraries\FatFs
+..\..\Libraries\FatFs\option

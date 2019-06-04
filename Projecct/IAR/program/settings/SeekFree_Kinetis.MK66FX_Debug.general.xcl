@@ -1,0 +1,17 @@
+"E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armproc.dll" 
+
+"E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armjlink2.dll" 
+
+"C:\Users\BlackLotus_AL\Desktop\K66例程\Projecct\IAR\program\MK66FX_Debug\Exe\SeekFree_Kinetis.out" 
+
+--plugin="E:\IAR Systems\Embedded Workbench 8.2\arm\bin\armbat.dll" 
+
+--device_macro="E:\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro="E:\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\NXP\K6x_Trace.dmac" 
+
+--flash_loader="E:\IAR Systems\Embedded Workbench 8.2\arm\config\flashloader\NXP\FlashK65Fxxx256K.board" 
+
+
+
+
