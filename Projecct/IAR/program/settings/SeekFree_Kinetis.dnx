@@ -41,7 +41,7 @@
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
     <DebugChecksum>
-        <Checksum>1656247587</Checksum>
+        <Checksum>1191590562</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -67,6 +67,14 @@
     <FlashMemory>
         <FlashEraseSelection>0 1</FlashEraseSelection>
     </FlashMemory>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <Disassemble_mode>
+        <mode>0</mode>
+    </Disassemble_mode>
     <array_types>
         <Fmt0>uint8[188]	3	0</Fmt0>
         <Fmt1>uint8[4]	3	0</Fmt1>
@@ -96,14 +104,6 @@
         <Fmt21>{W}42:xixi	3	0</Fmt21>
         <Fmt22>{W}42:yy	3	0</Fmt22>
     </watch_formats>
-    <Log_file>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-        <Category>_ 0</Category>
-    </Log_file>
-    <Disassemble_mode>
-        <mode>0</mode>
-    </Disassemble_mode>
     <Trace1>
         <Enabled>0</Enabled>
         <ShowSource>1</ShowSource>

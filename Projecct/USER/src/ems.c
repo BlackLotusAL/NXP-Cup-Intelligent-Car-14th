@@ -78,8 +78,7 @@ void EMS_Correct()
             
             if(ADC_value[R1] > ADC_max[R1])     ADC_max[R1] = ADC_value[R1];
             if(ADC_value[R1] < ADC_min[R1])     ADC_min[R1] = ADC_value[R1];
-            break;
-        
+            break; 
     }
 }  
 

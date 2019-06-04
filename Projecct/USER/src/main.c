@@ -102,18 +102,21 @@ int main(void)
     PID_Init(&PID_left , 5.0f, 1.5f, 0.0f, -600, 600);                                
     PID_Init(&PID_right, 5.0f, 1.5f, 0.0f, -600, 600);
     PID_Init(&PID_servo, 2.0f, 0.0f, 5.0f, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);
-
-    while(1)
+	
+	while(!goFlag)
 	{
         EMS_Correct_KEY_Operation(&K1); //电磁校准按键功能
         GO_KEY_Operation(&K2);          //发车按键功能
+	}
+	
+	while(1)
+	{
 		//SendStr();                    	//发送字符串
-		
 		if(mt9v032_finish_flag)
-        {
-            mt9v032_finish_flag = 0;
+		{
+			mt9v032_finish_flag = 0;
 			//displayimage032(image[0]);
-            seekfree_sendimg_032();
-        }
+			seekfree_sendimg_032();
+		}
 	}
 }
