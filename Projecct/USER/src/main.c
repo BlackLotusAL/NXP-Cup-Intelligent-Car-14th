@@ -76,7 +76,7 @@ MT9V032接线定义：
 PID_value PID_left, PID_right, PID_servo;					//左轮PID参数结构体，右轮PID参数结构体，伺服轮PID参数结构体
 
 float ADC_value[5], ADC_min[5], ADC_max[5];					//电感读数数组，电感最小值数组，电感最大值数组
-float posError = 0, posError_H = 0, posError_V = 0;			//位置偏差，水平电感位置偏差，垂直电感位置偏差 
+float posError = 0, posError_H, posError_V, posError_I;		//位置偏差，水平电感位置偏差，垂直电感位置偏差，图像位置偏差
 int posStatus = 0;											//位置状态
 
 int servoDuty = SERVO_MIDDLE_DUTY, servoTurnDuty = 0;		//舵机占空比，舵机转向占空比
@@ -102,21 +102,44 @@ int main(void)
     PID_Init(&PID_left , 5.0f, 1.5f, 0.0f, -600, 600);                                
     PID_Init(&PID_right, 5.0f, 1.5f, 0.0f, -600, 600);
     PID_Init(&PID_servo, 2.0f, 0.0f, 5.0f, -SERVO_MAX_TURN_DUTY, SERVO_MAX_TURN_DUTY);
-	
-	while(!goFlag)
+	/*
+	while(1)
 	{
-        EMS_Correct_KEY_Operation(&K1); //电磁校准按键功能
-        GO_KEY_Operation(&K2);          //发车按键功能
+		while(!goFlag)
+		{
+			EMS_Correct_KEY_Operation(&K1); //电磁校准按键功能
+			GO_KEY_Operation(&K2);          //发车按键功能
+			EMS_Get();						//读取电磁信号
+			EMS_Correct();					//校准电感读数
+		}	
+		while(goFlag)
+		{
+			EMS_Get();					//读取电磁信号
+			Pos_Get();					//判断车身位置
+			Servo_Set();				//驱动舵机
+			SendStr();					//发送字符串
+			if(mt9v032_finish_flag)
+			{
+				posError_I = image_handle();
+				mt9v032_finish_flag = 0;
+				//displayimage032(image[0]);
+				//seekfree_sendimg_032();
+
+			}
+		}
 	}
+	*/	
 	
 	while(1)
 	{
-		//SendStr();                    	//发送字符串
+		//SendStr();					//发送字符串
 		if(mt9v032_finish_flag)
 		{
-			mt9v032_finish_flag = 0;
+			Image_Handle();
+			Send_Picture_RGB();
+		  
+			mt9v032_finish_flag = 0;//图像数组处理完毕之后 清零标志位，标志位清零之后才开始继续采集图像
 			//displayimage032(image[0]);
-			seekfree_sendimg_032();
 		}
 	}
 }

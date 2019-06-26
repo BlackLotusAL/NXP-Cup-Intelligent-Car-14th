@@ -3,5 +3,5 @@
 #include "headfile.h"
 
 void Servo_Set();
-
+void Pos_Get();
 #endif

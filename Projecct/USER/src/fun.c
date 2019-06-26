@@ -2,7 +2,7 @@
 
 extern PID_value PID_left, PID_right, PID_servo;
 extern float ADC_value[5], ADC_min[5], ADC_max[5];
-extern float posError, posError_H, posError_V;
+extern float posError, posError_H, posError_V, posError_I;
 extern int posStatus;
 
 
@@ -72,9 +72,9 @@ void SendArr(int Arr[], int Size)
 void SendStr()
 {
     //产生要发送的字符串
-    sprintf(sendStr,"L2:%04d  L1:%04d  M0:%04d  R1:%04d  R2:%04d  PosSta:%02d  PosErrH:%04d  PosErrV:%04d  SerTurn:%03d  SerDuty:%04d  GetLPu:%03d  GetRPu:%03d  GetSp:%03d  TuAng:%03d  TuRad:%05d  TuSp:%03d  TuPu:%03d  SetLPu:%03d  SetRPu:%03d\r\n",\
+    sprintf(sendStr,"L2:%04d  L1:%04d  M0:%04d  R1:%04d  R2:%04d  PosSta:%02d  PosErrH:%04d  PosErrV:%04d  PosErrI:%04d  SerTurn:%03d  SerDuty:%04d  GetLPu:%03d  GetRPu:%03d  GetSp:%03d  TuAng:%03d  TuRad:%05d  TuSp:%03d  TuPu:%03d  SetLPu:%03d  SetRPu:%03d\r\n",\
                      (int)ADC_value[L2], (int)ADC_value[L1], (int)ADC_value[M0], (int)ADC_value[R1], (int)ADC_value[R2],\
-	  				 (int)posStatus, (int)posError_H, (int)posError_V, servoTurnDuty, servoDuty, \
+	  				 (int)posStatus, (int)posError_H, (int)posError_V, (int)posError_I, servoTurnDuty, servoDuty, \
                      getLeftPulse, getRightPulse, (int)getSpeed, \
                      (int)turnAngle, (int)turnRadius, (int)turnSpeed, \
                      turnPulse, setLeftPulse, setRightPulse);

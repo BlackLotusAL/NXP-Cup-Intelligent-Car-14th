@@ -13,6 +13,10 @@
         <encoding>UTF-8</encoding>
     </override>
     <override>
+        <path>C:\Users\BlackLotus_AL\Desktop\K66例程\Projecct\USER\inc\image.h</path>
+        <encoding>UTF-8</encoding>
+    </override>
+    <override>
         <path>C:\Users\BlackLotus_AL\Desktop\K66例程\Projecct\USER\inc\init.h</path>
         <encoding>UTF-8</encoding>
     </override>
@@ -50,6 +54,10 @@
     </override>
     <override>
         <path>C:\Users\BlackLotus_AL\Desktop\K66例程\Projecct\USER\src\fun.c</path>
+        <encoding>UTF-8</encoding>
+    </override>
+    <override>
+        <path>C:\Users\BlackLotus_AL\Desktop\K66例程\Projecct\USER\src\image.c</path>
         <encoding>UTF-8</encoding>
     </override>
     <override>

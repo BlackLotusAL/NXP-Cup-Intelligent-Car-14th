@@ -12,26 +12,26 @@
 #define SERVO_CONTROL_CYCLE (    5)		//舵机控制周期
 #define EMS_COLLECT_CYCLE   (    1)		//电磁采集周期
 
-#define FORWARD (1)                     //前进
-#define STOP (0)                        //停止
-#define RETREAT (-1)                    //后退
+#define FORWARD					(1)		//前进
+#define STOP					(0)		//停止
+#define RETREAT					(-1)	//后退
 
 #define EMS_CORRECT_MODE_IINT   (0)     //初始化电磁信号校准
 #define EMS_CORRECT_MODE_H      (1)     //开启电磁信号中间校准模式
 #define EMS_CORRECT_MODE_V      (2)     //开启电磁信号两侧校准模式
 #define EMS_CORRECT_MODE_OFF    (3)     //关闭电磁信号校准模式
 
-#define CAR_VERY_LEFT  (-2)             //车身非常靠左
-#define CAR_LEFT       (-1)             //车身偏左
-#define CAR_MIDDLE     (0)              //车身正中
-#define CAR_RIGHT      (1)              //车身偏右
-#define CAR_VERY_RIGHT (2)              //车身非常靠右
+#define CAR_VERY_LEFT  			(-2)	//车身非常靠左
+#define CAR_LEFT				(-1)	//车身偏左
+#define CAR_MIDDLE				(0)		//车身正中
+#define CAR_RIGHT				(1)		//车身偏右
+#define CAR_VERY_RIGHT			(2)		//车身非常靠右
 
-#define TURN_VERY_LEFT  (-2)            //向左急弯
-#define TURN_LEFT       (-1)            //向左小弯
-#define TURN_ZERO       (0)             //直道
-#define TURN_RIGHT      (1)             //向右小弯
-#define TURN_VERY_RIGHT (2)             //向右急弯
+#define TURN_VERY_LEFT			(-2)	//向左急弯
+#define TURN_LEFT				(-1)	//向左小弯
+#define TURN_ZERO				(0)		//直道
+#define TURN_RIGHT				(1)		//向右小弯
+#define TURN_VERY_RIGHT			(2)		//向右急弯
 
 #define PI (3.14159265358979f)
 #define CAR_LENGTH (200.0f)																	//车身长，单位mm
@@ -57,4 +57,7 @@
 #define R1 (3)          //最左边电感编号3
 #define R2 (4)          //最左边电感编号4
 
+
+#define BLACK0 (0x00)
+#define WHITE1 (0xFF)
 #endif

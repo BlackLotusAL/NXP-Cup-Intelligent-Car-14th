@@ -81,8 +81,6 @@
 void lcd_init(void);
 void dsp_single_colour(int color);
 void displayimage032(uint8 *p);
-void displayimage7725(unsigned char *p);
-
 
 
 #endif

@@ -297,7 +297,11 @@ void camera_init(void)
 //-------------------------------------------------------------------------------------------------------------------
 void VSYNC(void)
 {
-	dma_repeat(DMA_CH0,(void *)&D_IN_DATA(0),(void *)image[0],COL*ROW);
+	//图像数组处理完毕之后 清零标志位，标志位清零之后才开始继续采集图像
+	if(!mt9v032_finish_flag)
+	{
+		dma_repeat(DMA_CH0, (void *)&D_IN_DATA(0), (void *)image[0], COL*ROW);
+	}
 }
 
 
@@ -331,10 +335,15 @@ void row_finished(void)
 void seekfree_sendimg_032(void)
 {
 	//串口发送图像
-	//uart_putchar(uart3,0x00);uart_putchar(uart3,0xff);uart_putchar(uart3,0x01);uart_putchar(uart3,0x01);//发送命令
+	//uart_putchar(uart3, 0x00);uart_putchar(uart3, 0xff);uart_putchar(uart3, 0x01);uart_putchar(uart3, 0x01);//发送命令
     //uart_putbuff(uart3, (uint8_t *)image, ROW*COL);  //发送图像
 
-	//蓝牙发送图像
-	uart_putchar(uart4,0x00);uart_putchar(uart4,0xff);uart_putchar(uart4,0x01);uart_putchar(uart4,0x01);//发送命令
+	//蓝牙发送图像	逐飞
+	//uart_putchar(uart4, 0x00);uart_putchar(uart4, 0xff);uart_putchar(uart4, 0x01);uart_putchar(uart4, 0x01);//发送命令
+    //uart_putbuff(uart4, (uint8_t *)image, ROW*COL);  //发送图像
+
+	//蓝牙发送图像	山外
+    uart_putchar(uart4, 0x01);uart_putchar(uart4, 0xFE);
     uart_putbuff(uart4, (uint8_t *)image, ROW*COL);  //发送图像
+    uart_putchar(uart4, 0xFE);uart_putchar(uart4, 0x01);
 }

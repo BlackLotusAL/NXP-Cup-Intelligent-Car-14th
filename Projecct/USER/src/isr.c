@@ -33,24 +33,22 @@ void DMA0_IRQHandler(void)
 void PIT0_IRQHandler(void)
 {
 	PIT_FlAG_CLR(pit0);
-    Speed_Get();				//获取速度
-    Speed_Turn();				//计算左右轮具体速度
-    Speed_Stop();				//保护机制    
-    Speed_Set();                //驱动电机
+    //Speed_Get();				//获取速度
+    //Speed_Turn();				//计算左右轮具体速度
+    //Speed_Stop();				//保护机制    
+	//Speed_Set();                //驱动电机
 }
 
 void PIT1_IRQHandler(void)
 {
 	PIT_FlAG_CLR(pit1);
-    Servo_Set();				//驱动舵机
+
 }
 
 void PIT2_IRQHandler(void)
 {
 	PIT_FlAG_CLR(pit2);
-    EMS_Get();					//读取电磁信号
-    EMS_Correct();				//校准电感读数
-    Pos_Get();					//判断车身位置
+	
 }
 
 void PIT3_IRQHandler(void)

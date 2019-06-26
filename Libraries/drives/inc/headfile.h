@@ -30,6 +30,7 @@
 #include "string.h"         //memcpy
 #include "stdlib.h"         //malloc
 #include "math.h"           //pow
+#include "stdbool.h"
 
 //--------函数库--------
 #include "MK60_rtc.h"
@@ -60,7 +61,6 @@
 #include "SEEKFREE_18TFT.h"
 #include "SEEKFREE_FUN.h"
 #include "SEEKFREE_TSL1401.h"
-#include "SEEKFREE_7725.h"
 #include "SEEKFREE_IIC.h"
 #include "SEEKFREE_NRF24L01.h"
 #include "SEEKFREE_OLED.h"
@@ -73,6 +73,7 @@
 #include "define.h"
 #include "ems.h"
 #include "fun.h"
+#include "image.h"
 #include "init.h" 	
 #include "key.h"
 #include "led.h"

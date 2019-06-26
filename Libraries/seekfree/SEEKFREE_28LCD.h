@@ -103,7 +103,6 @@ void LCD_Display_32x16Str(uint16 x, uint16 y, int8 * str, uint16 color);
 void LCD_Display_16x8Num(uint16 x, uint16 y, int dat, uint8 number, uint16 color);
 void LCD_Display_32x16Num(uint16 x, uint16 y, int dat, uint8 number, uint16 color);
 void LCD_Displayimage032(uint8 *p);
-void LCD_Displayimage7725(uint8 *p);
 void LCD_Display_Chinese(uint16 x, uint16 y, uint8 number, uint8 size, const uint8 * p, uint16 color);
 void LCD_Display_image(uint16 x, uint16 y, uint16 size_x, uint16 size_y, const uint8 *p);
 

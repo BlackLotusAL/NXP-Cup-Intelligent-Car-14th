@@ -1,7 +1,6 @@
 #include "ems.h"
 
 extern float ADC_value[5], ADC_min[5], ADC_max[5];
-extern float posError, posError_H, posError_V;
 extern int posStatus;
 extern KEY_value K1;
 
@@ -83,48 +82,3 @@ void EMS_Correct()
 }  
 
 
-/**
-* @函数名: Pos_Get
-* @功  能: 根据电磁数据判断位置状态
-* @参  数: 无
-* @返  回: 无
-* @简  例: 无
-* @注  意：无
-*/
-void Pos_Get()
-{
-    //中间电感值最大
-    if(ADC_value[M0] > ADC_value[L2] && ADC_value[M0] > ADC_value[R2])
-    {
-        posStatus = CAR_MIDDLE;
-    }
-    //最左侧电感值最大
-    else if(ADC_value[L2] > ADC_value[M0] && ADC_value[L2] > ADC_value[R2])
-    {
-        posStatus = CAR_RIGHT;
-        if(ADC_value[M0] < 400.0)
-        {
-             posStatus = CAR_VERY_RIGHT;
-        }       
-    }
-    //最右侧电感值最大
-    else if(ADC_value[R2] > ADC_value[M0] && ADC_value[R2] > ADC_value[L2])
-    {
-        posStatus = CAR_LEFT;
-        if(ADC_value[M0] < 400.0)
-        {
-             posStatus = CAR_VERY_LEFT;
-        }  
-    }
-    
-    //差比和得出水平电感位置偏差
-    posError_H = ((ADC_value[M0] - ADC_value[L2]) /(ADC_value[M0] + ADC_value[L2])) - ((ADC_value[M0] - ADC_value[R2]) / (ADC_value[M0] + ADC_value[R2]));  
-    posError_H = posError_H * 100.0f;
-    
-    //差比和得出垂直电感位置偏差
-    posError_V = ((ADC_value[M0] - ADC_value[L1]) /(ADC_value[M0] + ADC_value[L1])) - ((ADC_value[M0] - ADC_value[R1]) / (ADC_value[M0] + ADC_value[R1]));     
-    posError_V = posError_V * 100.0f;
-    
-    //最终位置偏差
-    posError = posError_H + 0.5 * posError_V;
-}

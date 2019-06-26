@@ -1206,12 +1206,6 @@
             <name>$PROJ_DIR$\..\..\..\Libraries\seekfree\SEEKFREE_28LCD.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Libraries\seekfree\SEEKFREE_7725.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Libraries\seekfree\SEEKFREE_7725.h</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\seekfree\SEEKFREE_FUN.c</name>
         </file>
         <file>
@@ -1284,6 +1278,9 @@
             <name>$PROJ_DIR$\..\..\USER\src\fun.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\USER\src\image.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\USER\src\init.c</name>
         </file>
         <file>
@@ -1324,6 +1321,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\drives\inc\headfile.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\USER\inc\image.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\USER\inc\init.h</name>
